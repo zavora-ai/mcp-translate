@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2a2a4a"/>
+      <stop offset="100%" stop-color="#1f1f3a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="500" fill="url(#bg)" rx="12"/>
+
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" fill="#e2e8f0" font-family="system-ui" font-size="18" font-weight="bold">mcp-translate — Architecture</text>
+
+  <!-- Agent Box -->
+  <rect x="50" y="70" width="160" height="80" fill="url(#card)" stroke="#6366f1" stroke-width="2" rx="8"/>
+  <text x="130" y="100" text-anchor="middle" fill="#e2e8f0" font-family="system-ui" font-size="13" font-weight="bold">AI Agent</text>
+  <text x="130" y="120" text-anchor="middle" fill="#94a3b8" font-family="system-ui" font-size="10">Claude / GPT / Kiro</text>
+  <text x="130" y="135" text-anchor="middle" fill="#94a3b8" font-family="system-ui" font-size="10">Any MCP Client</text>
+
+  <!-- Arrow Agent → Server -->
+  <line x1="210" y1="110" x2="290" y2="110" stroke="#6366f1" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="250" y="100" text-anchor="middle" fill="#94a3b8" font-family="system-ui" font-size="9">stdio / HTTP</text>
+
+  <!-- MCP Server Box -->
+  <rect x="300" y="60" width="280" height="100" fill="url(#card)" stroke="#8b5cf6" stroke-width="2" rx="8"/>
+  <text x="440" y="85" text-anchor="middle" fill="#e2e8f0" font-family="system-ui" font-size="13" font-weight="bold">mcp-translate</text>
+  <text x="440" y="105" text-anchor="middle" fill="#94a3b8" font-family="system-ui" font-size="10">Tool Router (5 tools)</text>
+
+  <!-- Tools inside server -->
+  <rect x="315" y="115" width="80" height="20" fill="#3730a3" rx="4"/>
+  <text x="355" y="129" text-anchor="middle" fill="#c7d2fe" font-family="system-ui" font-size="8">translate</text>
+  <rect x="400" y="115" width="80" height="20" fill="#3730a3" rx="4"/>
+  <text x="440" y="129" text-anchor="middle" fill="#c7d2fe" font-family="system-ui" font-size="8">detect_language</text>
+  <rect x="485" y="115" width="80" height="20" fill="#3730a3" rx="4"/>
+  <text x="525" y="129" text-anchor="middle" fill="#c7d2fe" font-family="system-ui" font-size="8">batch_translate</text>
+
+  <!-- Arrow Server → MyMemory -->
+  <line x1="440" y1="160" x2="440" y2="210" stroke="#8b5cf6" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="470" y="190" text-anchor="middle" fill="#94a3b8" font-family="system-ui" font-size="9">HTTPS</text>
+
+  <!-- MyMemory API -->
+  <rect x="300" y="220" width="280" height="120" fill="url(#card)" stroke="#10b981" stroke-width="2" rx="8"/>
+  <text x="440" y="245" text-anchor="middle" fill="#e2e8f0" font-family="system-ui" font-size="13" font-weight="bold">MyMemory API</text>
+  <text x="440" y="265" text-anchor="middle" fill="#94a3b8" font-family="system-ui" font-size="10">api.mymemory.translated.net</text>
+
+  <!-- MyMemory features -->
+  <rect x="315" y="280" width="120" height="20" fill="#064e3b" rx="4"/>
+  <text x="375" y="294" text-anchor="middle" fill="#6ee7b7" font-family="system-ui" font-size="8">Machine Translation</text>
+  <rect x="440" y="280" width="120" height="20" fill="#064e3b" rx="4"/>
+  <text x="500" y="294" text-anchor="middle" fill="#6ee7b7" font-family="system-ui" font-size="8">Translation Memory</text>
+  <rect x="315" y="305" width="120" height="20" fill="#064e3b" rx="4"/>
+  <text x="375" y="319" text-anchor="middle" fill="#6ee7b7" font-family="system-ui" font-size="8">Language Detection</text>
+  <rect x="440" y="305" width="120" height="20" fill="#064e3b" rx="4"/>
+  <text x="500" y="319" text-anchor="middle" fill="#6ee7b7" font-family="system-ui" font-size="8">200+ Languages</text>
+
+  <!-- Response flow -->
+  <rect x="50" y="220" width="200" height="140" fill="url(#card)" stroke="#f59e0b" stroke-width="2" rx="8"/>
+  <text x="150" y="245" text-anchor="middle" fill="#e2e8f0" font-family="system-ui" font-size="12" font-weight="bold">Response Schema</text>
+  <text x="70" y="270" fill="#fbbf24" font-family="monospace" font-size="9">{</text>
+  <text x="80" y="285" fill="#94a3b8" font-family="monospace" font-size="9">"translation": "..."</text>
+  <text x="80" y="300" fill="#94a3b8" font-family="monospace" font-size="9">"quality": 0.85</text>
+  <text x="80" y="315" fill="#94a3b8" font-family="monospace" font-size="9">"source_lang": "en"</text>
+  <text x="80" y="330" fill="#94a3b8" font-family="monospace" font-size="9">"target_lang": "sw"</text>
+  <text x="80" y="345" fill="#94a3b8" font-family="monospace" font-size="9">"alternatives": [...]</text>
+  <text x="70" y="355" fill="#fbbf24" font-family="monospace" font-size="9">}</text>
+
+  <!-- Language coverage -->
+  <rect x="630" y="70" width="220" height="270" fill="url(#card)" stroke="#06b6d4" stroke-width="2" rx="8"/>
+  <text x="740" y="95" text-anchor="middle" fill="#e2e8f0" font-family="system-ui" font-size="12" font-weight="bold">Language Coverage</text>
+
+  <text x="650" y="120" fill="#67e8f9" font-family="system-ui" font-size="10">🌍 Global (200+)</text>
+  <text x="650" y="145" fill="#94a3b8" font-family="system-ui" font-size="9">en fr de es pt it nl ru</text>
+  <text x="650" y="165" fill="#94a3b8" font-family="system-ui" font-size="9">zh ja ko ar hi bn ur</text>
+
+  <text x="650" y="195" fill="#67e8f9" font-family="system-ui" font-size="10">🌍 African</text>
+  <text x="650" y="215" fill="#94a3b8" font-family="system-ui" font-size="9">sw am ha yo ig zu af rw</text>
+
+  <text x="650" y="245" fill="#67e8f9" font-family="system-ui" font-size="10">🌍 Nordic</text>
+  <text x="650" y="265" fill="#94a3b8" font-family="system-ui" font-size="9">sv no da fi et lv lt</text>
+
+  <text x="650" y="295" fill="#67e8f9" font-family="system-ui" font-size="10">🌍 Southeast Asian</text>
+  <text x="650" y="315" fill="#94a3b8" font-family="system-ui" font-size="9">vi th id ms tl</text>
+
+  <!-- Data flow labels -->
+  <rect x="300" y="400" width="550" height="80" fill="url(#card)" stroke="#475569" stroke-width="1" rx="8"/>
+  <text x="575" y="425" text-anchor="middle" fill="#e2e8f0" font-family="system-ui" font-size="11" font-weight="bold">Data Flow</text>
+  <text x="320" y="450" fill="#94a3b8" font-family="system-ui" font-size="10">1. Agent calls translate("Hello", "en", "sw")</text>
+  <text x="320" y="468" fill="#94a3b8" font-family="system-ui" font-size="10">2. Server URL-encodes and queries MyMemory API</text>
+  <text x="600" y="450" fill="#94a3b8" font-family="system-ui" font-size="10">3. API returns translation + quality + alternatives</text>
+  <text x="600" y="468" fill="#94a3b8" font-family="system-ui" font-size="10">4. Server returns structured JSON to agent</text>
+
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#8b5cf6"/>
+    </marker>
+  </defs>
+</svg>
