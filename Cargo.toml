@@ -2,7 +2,7 @@
 
 [package]
 name = "mcp-translate"
-version = "1.0.0"
+version = "1.0.1"
 edition = "2024"
 description = "Translation MCP server — translate text, detect languages, batch translate, translation memory (200+ languages, zero config)"
 license = "Apache-2.0"

@@ -1,6 +1,6 @@
 server_id = "mcp_translate"
 display_name = "Translate"
-version = "1.0.0"
+version = "1.0.1"
 domain = "translation"
 sdk_version = "0.1.0"
 risk_level = "low"
