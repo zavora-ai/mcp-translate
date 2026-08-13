@@ -1,8 +1,8 @@
 server_id = "mcp_translate"
 display_name = "Translate"
-version = "1.0.1"
+version = "1.1.0"
 domain = "translation"
-sdk_version = "0.1.0"
+sdk_version = "0.2.0"
 risk_level = "low"
 writes_allowed = "none"
 transports = ["stdio"]
@@ -12,28 +12,28 @@ environments = ["development", "staging", "production"]
 
 [[tools]]
 name = "translate"
-description = "Translate text between 200+ languages"
+description = "Translate text between languages. Use source='auto' for autodetect. Supports 200+ languages."
 risk_class = "read_only"
 requires_approval = false
 credential_bindings = []
 
 [[tools]]
 name = "detect_language"
-description = "Detect language of input text"
+description = "Detect the language of input text"
 risk_class = "read_only"
 requires_approval = false
 credential_bindings = []
 
 [[tools]]
 name = "batch_translate"
-description = "Translate into multiple languages at once"
+description = "Translate text into multiple target languages at once"
 risk_class = "read_only"
 requires_approval = false
 credential_bindings = []
 
 [[tools]]
 name = "search_translation_memory"
-description = "Search human-verified translation memory"
+description = "Search MyMemory translation memory for existing human-verified translations"
 risk_class = "read_only"
 requires_approval = false
 credential_bindings = []
