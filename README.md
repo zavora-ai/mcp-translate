@@ -284,7 +284,7 @@ docker run -p 8080:8080 ghcr.io/zavora-ai/mcp-translate:latest
 ```toml
 server_id = "mcp_translate"
 display_name = "Translate"
-version = "1.0.0"
+version = "1.1.0"
 domain = "translation"
 risk_level = "low"
 writes_allowed = "none"
