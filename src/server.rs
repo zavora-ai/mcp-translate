@@ -55,7 +55,7 @@ impl TranslateServer {
     }
 }
 
-#[tool_router(server_handler)]
+#[tool_router]
 impl TranslateServer {
     #[tool(description = "Translate text between languages. Use source='auto' for autodetect. Supports 200+ languages.")]
     async fn translate(&self, Parameters(input): Parameters<TranslateInput>) -> String {
@@ -136,4 +136,11 @@ impl TranslateServer {
         let arr: Vec<Value> = langs.iter().map(|(c,n)| json!({"code": c, "name": n})).collect();
         json!({"languages": arr, "total": 200, "note": "Full list at mymemory.translated.net. Use ISO 639-1 codes."}).to_string()
     }
+}
+
+adk_mcp_sdk::mcp_2026_server! {
+    server: TranslateServer,
+    task_tools: ["batch_translate"],
+    approval_tools: [],
+    cache_ttl_ms: 60_000,
 }
